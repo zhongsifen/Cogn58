@@ -6,7 +6,7 @@
 #include "opencv2/objdetect.hpp"
 
 class FaceDetect {
-protected:
+private:
 	int status;
 	cv::CascadeClassifier cascade;
 public:

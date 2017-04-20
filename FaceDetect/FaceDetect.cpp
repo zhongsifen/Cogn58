@@ -3,26 +3,23 @@
 #include "FaceDetect.hpp"
 using namespace cv;
 
+const std::string _res("/Users/zhongsifen/Work/Cogn58/res/");
+
 FaceDetect::FaceDetect()
 {
 	this->status = 0;
 
-	bool ret = false;
-
-	std::string filename(RES_FACEX + "haarcascade_frontalface_alt.xml");
-	ret = this->load(filename);		if (!ret) return;
+	bool ret = this->load(_res + "haarcascade_frontalface_alt.xml");	if (!ret) return;
 	
 	this->status = 1;
 }
 
 bool
-FaceDetect::load(std::string filename)
+FaceDetect::load(std::string xml)
 {
 	if (this->status < 0) return false;
 
-	bool ret = false;
-	
-	ret = this->cascade.load(filename);		if (!ret) return false;
+	bool ret = this->cascade.load(xml);		if (!ret) return false;
 
 	this->status = 1;
 
