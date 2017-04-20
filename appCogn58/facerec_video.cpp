@@ -48,7 +48,7 @@ static void read_csv(const string& filename, vector<Mat>& images, vector<int>& l
     }
 }
 
-int main(int argc, const char *argv[]) {
+int main_video(int argc, const char *argv[]) {
     // Check for valid command line arguments, print usage
     // if no arguments were given.
     if (argc != 4) {

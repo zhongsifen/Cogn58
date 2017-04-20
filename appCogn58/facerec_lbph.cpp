@@ -46,14 +46,15 @@ static void read_csv(const string& filename, vector<Mat>& images, vector<int>& l
     }
 }
 
-int main(int argc, const char *argv[]) {
+int main_lbph(int argc, const char *argv[]) {
     // Check for valid command line arguments, print usage
     // if no arguments were given.
     if (argc != 2) {
         cout << "usage: " << argv[0] << " <csv.ext>" << endl;
         exit(1);
     }
-    // Get the path to your CSV.
+
+	// Get the path to your CSV.
     string fn_csv = string(argv[1]);
     // These vectors hold the images and corresponding labels.
     vector<Mat> images;

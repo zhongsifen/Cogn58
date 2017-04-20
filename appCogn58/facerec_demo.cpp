@@ -67,7 +67,7 @@ static void read_csv(const string& filename, vector<Mat>& images, vector<int>& l
     }
 }
 
-int main(int argc, const char *argv[]) {
+int main_demo(int argc, const char *argv[]) {
     // Check for valid command line arguments, print usage
     // if no arguments were given.
     if (argc != 2 && argc != 3) {
@@ -109,7 +109,7 @@ int main(int argc, const char *argv[]) {
     // done, so that the training data (which we learn the
     // cv::FaceRecognizer on) and the test data we test
     // the model with, do not overlap.
-    Mat testSample = images[images.size() - 1];
+	Mat testSample = imread(String(argv[2]));	//images[images.size() - 1];
     int nlabels = (int)labels.size();
     int testLabel = labels[nlabels-1];
     images.pop_back();
